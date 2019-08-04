@@ -40,7 +40,7 @@
 |user_id|integer|null: false|
 |group_id|integer|null: false|
 |body|text|null: false|
-|image|text|null: false|
+|image|string|null: false|
 ### Association
 - belongs_to :group
 - belongs_to :user
