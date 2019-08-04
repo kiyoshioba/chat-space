@@ -1,3 +1,4 @@
+# README
 # chat-space DB設計
 ##userテーブル
 
@@ -44,9 +45,6 @@
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-
-
 
 
 
