@@ -7,13 +7,13 @@
         %p.side-header__box__user-name seo
         %ul.side-header__box__menu
           %li.side-header__box__menu__new-group
-            %a{:href => "/groups/new"}
+            =link_to "/groups/new" do
               %i.fa.fa-edit
           %li.side-header__box__menu__edit-user
-            %a{:href => "/users/0001/edit"}
+            =link_to "/users/0001/edit" do
               %i.fa.fa-cog
     .groups
-      %a{:href => "/groups/0001/messages"}
+      =link_to "/groups/0001/messages" do
         .group
           %p.group__group-name sample
           %p.group__latest-message Good bye world!
@@ -27,7 +27,7 @@
         %ul.main-header__left-box__member-list
           Members：seo neko
           %li.main-header__left-box__member-list__member seo
-      %a{:href => "/groups/2960/edit"}
+      =link_to "/groups/2960/edit" do
         .main-header__edit-btn Edit
 
     .messages
