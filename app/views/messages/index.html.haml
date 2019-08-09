@@ -1,0 +1,55 @@
+.flash-box
+  .notice グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name seo
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            =link_to "/groups/new" do
+              %i.fa.fa-edit
+          %li.side-header__box__menu__edit-user
+            =link_to "/users/0001/edit" do
+              %i.fa.fa-cog
+    .groups
+      =link_to "/groups/0001/messages" do
+        .group
+          %p.group__group-name sample
+          %p.group__latest-message Good bye world!
+
+
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group{"data-group_id" => "2960"}
+          sample
+        %ul.main-header__left-box__member-list
+          Members：seo neko
+          %li.main-header__left-box__member-list__member seo
+      =link_to "/groups/2960/edit" do
+        .main-header__edit-btn Edit
+
+    .messages
+      .message{"data-message_id" => "0001"}
+        .message__upper-info
+          %p.message__upper-info__talker seo
+          %p.message__upper-info__date 2019/08/04(Sun) 22:54:28
+        %p.message__text Hello world!!
+      .message{"data-message_id" => "0002"}
+        .message__upper-info
+          %p.message__upper-info__talker neko
+          %p.message__upper-info__date 2019/08/07(Wed) 19:03:00
+        %p.message__text Good bye world!
+
+    .form
+      %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/0001/messages", :enctype => "multipart/form-data", :method => "post"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        %input{:name => "authenticity_token", :type => "hidden", :value => "yvrEifPisIm5LjQ85PticMyEMfzxAntTwRtwRRdd31xNYUE4ROzeSYL8ElRBwXzdwqPM4Ivmb5QNvzLcI7olIg=="}/
+        .input-box
+          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+          %label.input-box__image{:for => "message_image"}
+            %i.fa.fa-image
+            %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+        %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
