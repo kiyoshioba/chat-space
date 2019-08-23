@@ -1,22 +1,5 @@
-.flash-box
-  .notice グループを作成しました
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name seo
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            =link_to "/groups/new" do
-              %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
-            =link_to "/users/0001/edit" do
-              %i.fa.fa-cog
-    .groups
-      =link_to "/groups/0001/messages" do
-        .group
-          %p.group__group-name sample
-          %p.group__latest-message Good bye world!
+  = render 'shared/side_bar'
 
 
   .chat-main
