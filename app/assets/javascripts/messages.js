@@ -37,7 +37,7 @@ $(function(){
        $( ".form__submit").prop( "disabled", false );
        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
        $('.form__message').val('');
-       $('.hidden').val('');
+       $('.hidden').reset();
       })
      .fail(function(){
         alert('error');
