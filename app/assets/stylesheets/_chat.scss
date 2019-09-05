@@ -18,6 +18,7 @@ $color2:#434a54;
   width: 300px;
   color: white;
   float: left;
+  overflow: scroll;
   a {
     color: white;
   }
@@ -30,10 +31,20 @@ $color2:#434a54;
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
-    &__menu {
-      display: flex;
-      li {
-        margin-left: 0.3rem;
+    &__name {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    &__lists {
+      display: inline-block;
+      float: right;
+      .list {
+        display: inline-block;
+      }
+      .icon {
+        color: white;
+        font-size: 1rem;
       }
     }
   }
@@ -41,16 +52,18 @@ $color2:#434a54;
   .groups {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-    padding: 20px 20px 0;
-    overflow: scroll;
+    padding: 20px 20px;
     .group {
-      margin-bottom: 40px;
-      &__group-name {
+      box-sizing: border-box;
+      &__name {
         font-size: 15px;
-        margin-bottom: 5px;
+        padding-bottom: 5px;
+        color: #fff;
       }
-      &__latest-message {
+      &__message {
+        padding: 0 0px 40px 0px;
         font-size: 11px;
+        color: #fff;
       }
     }
   }
@@ -103,15 +116,14 @@ $color2:#434a54;
 
   .messages {
     height: calc(100vh - 190px);
-    padding: 46px 40px;
+    padding: 46px 40px 0;
     background-color: #fafafa;
     overflow: scroll;
     .message {
-      padding-bottom: 40px;
-      &__upper-info {
+      .upper-message {
         display: flex;
         margin-bottom: 10px;
-        &__talker {
+        &__user-name {
           color: $color2;
           font-size: 16px;
           font-weight: bold;
@@ -122,10 +134,13 @@ $color2:#434a54;
           margin-left: 10px;
         }
       }
-      &__text {
-        color: $color2;
-        font-size: 14px;
-        margin-bottom: 10px;
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: $black;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
       }
     }
   }
