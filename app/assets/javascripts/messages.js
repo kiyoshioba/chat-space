@@ -36,7 +36,7 @@ $(function() {
       $('.messages').append(html);
       $('.new_message')[0].reset();
       $( ".form__submit").prop( "disabled", false );
-      $('.message').animate({scrollTop: $('.message')[0].scrollHeight}, 'fast');
+      $('.messages').animate({scrollTop: $(".message")[0].scrollHeight}, 'fast');
     })
    .fail(function(){
       alert('メッセージ送信に失敗しました');
