@@ -19,7 +19,7 @@
       = render @messages
 
     .form
-      = form_for [@group, @message], html: {class: 'msg_form' } do |f|
+      = form_for [@group, @message], html: { class: 'msg_form' } do |f|
         = f.hidden_field :user_id, value: "#{@message.user_id}"
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask

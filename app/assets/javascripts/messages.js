@@ -19,25 +19,26 @@ $(function() {
                 </div>`;
     return html;
   }
-  $('.new_message').on('submit', function(e){
+  $('.msg_form').on('submit', function(e){
     e.preventDefault();
+    var url = $(this).attr('action');
     var formData = new FormData(this);
-    var href = window.location.href
     $.ajax({
-      url: href,
+      url: url,
       type: "POST",
       data: formData,
       dataType: 'json',
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(message){
+      console.log(message);
+      var html = buildHTML(message);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      $('.new_message')[0].reset();
+      $('.msg_form')[0].reset();
       $( ".form__submit").prop( "disabled", false );
- 
+
     })
    .fail(function(){
       alert('メッセージ送信に失敗しました');
